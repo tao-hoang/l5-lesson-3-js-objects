@@ -36,6 +36,8 @@
         Assign a variable to the dinosaurs array.
         Select and assign a varible to <main>
         */
+       const dinos = dinosaurs;
+       const container = document.querySelector("main")
 
 
 
@@ -45,6 +47,20 @@
         Show the image, name, diet, length, period, and info for each dinosaur.
         Remember to use the += operator so the additions are cumulative.
         */
+        dinosaurs.forEach(function(dino) {
+            const dinoHTML = `<div class="dinosaur">
+                <div class="dino-image">
+                    <img src="images/${dino.img}">
+                </div>
+                <div class="dino-info">
+                    <h3>${dino.name}</h3>
+                    <p>Diet: ${dino.diet}
+                       Length: ${dino.length}
+                       Period: ${dino.period}</p>
+                    <p>${dino.info}</p>
+                </div>`
+            container.innerHTML += dinoHTML; 
+        });
 
 
 
