@@ -40,15 +40,21 @@
     <script>
 
         //Exercise 1 Select the img, h3, and p tags and assign each one a variable
-
-
-
+       let dinoImage = document.querySelector ('#dino-pic');
+       let dinoName = document.querySelector ('#dino-name');
+       let dinoDesc = document.querySelector ('#dino-description');
+       let dinoPeriod = document.querySelector ('#dino-period');
         /* Exercise 2
         Create an object for a dinosaur, it can be real or imaginary. Look online for a picture and add it to the images folder, or you can use one of the triceratops images. 
         Make 3 key-value pairs: image, name, info.
         Show your object in the console. 
         */
-
+       
+        let myDino = {
+            image: 'images/dracorex.jpg',
+            name: 'Thumb',
+            'info': 'my iq is room temperature'
+        }
 
 
 
@@ -59,14 +65,17 @@
         You can use the .src property to show the image.  Which DOM element property can we use to set text?
         Practice both dot notation and bracket notation.
         */
-
-
+       
+        dinoImage.src = myDino.image;
+        dinoName.textContent = myDino['name'];
+        dinoDesc.textContent = myDino['info'];
 
         /*Exercise 4
         Change the value of one of the keys in your object.
         To update what is shown on the page, run the line of code that inserts the value again.
         */
-
+        dinoName.key= 'pp';
+        dinoDesc.textContent = dinoName.key;
 
 
         /* Exercise 5
@@ -75,20 +84,26 @@
         as Jurassic or Cretaceious.
         Select the dino-period span tag, and insert the value of the new property to show it on the page.
         */
-
+        dinoPeriod.newKey = 'Jurassic';
+        dinoPeriod.textContent = dinoPeriod.newKey
 
 
         /*Exercise 6
        Use the Object.keys() method to show an array of keys in the console.
        */
 
+        let dinoArray = Object.keys(myDino);
 
+        console.log(dinoArray);
 
         /*Exercise 7
         Use a for loop with the "in" keyword to see all values printed in the console.
         Will this work with dot or bracket syntax?
         */
-
+        for (let i in myDino){
+            conosle.log(i);
+            console.log(myDino[i]);
+        }
 
 
 
